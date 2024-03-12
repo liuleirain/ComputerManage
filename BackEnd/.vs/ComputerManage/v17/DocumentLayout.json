@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|d:\\dotnetlearning\\computermanage\\backend\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|solutionrelative:controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|d:\\dotnetlearning\\computermanage\\backend\\services\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|solutionrelative:services\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|d:\\dotnetlearning\\computermanage\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|d:\\dotnetlearning\\computermanage\\backend\\services\\workinggroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|solutionrelative:services\\workinggroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|d:\\dotnetlearning\\computermanage\\backend\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|solutionrelative:interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|d:\\dotnetlearning\\computermanage\\backend\\interfaces\\idepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|solutionrelative:interfaces\\idepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|d:\\dotnetlearning\\computermanage\\backend\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B96D4D60-3CDD-44BE-AD68-AA4F32A22D95}|ComputerManage.csproj|solutionrelative:models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DepartmentController.cs",
+              "ToolTip": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "Controllers\\DepartmentController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T06:57:46.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Interfaces\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T06:44:40.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WorkingGroupService.cs",
+              "DocumentMoniker": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Services\\WorkingGroupService.cs",
+              "RelativeDocumentMoniker": "Services\\WorkingGroupService.cs",
+              "ToolTip": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Services\\WorkingGroupService.cs",
+              "RelativeToolTip": "Services\\WorkingGroupService.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAiwFwAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T06:43:54.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DepartmentService.cs",
+              "DocumentMoniker": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Services\\DepartmentService.cs",
+              "RelativeDocumentMoniker": "Services\\DepartmentService.cs",
+              "ToolTip": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Services\\DepartmentService.cs",
+              "RelativeToolTip": "Services\\DepartmentService.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAIwF0AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T06:42:33.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Department.cs",
+              "DocumentMoniker": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "Models\\Department.cs",
+              "ToolTip": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Models\\Department.cs",
+              "RelativeToolTip": "Models\\Department.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T06:41:43.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IDepartmentService.cs",
+              "DocumentMoniker": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Interfaces\\IDepartmentService.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IDepartmentService.cs",
+              "ToolTip": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Interfaces\\IDepartmentService.cs",
+              "RelativeToolTip": "Interfaces\\IDepartmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwgAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T06:40:14.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\DotNetLearning\\ComputerManage\\BackEnd\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAAADkAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T09:28:45.203Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
