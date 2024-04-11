@@ -153,6 +153,5 @@ namespace ComputerManage.Services
                 Errors = result.Errors.Select(e => e.Description)
             };
         }
-
     }
 }

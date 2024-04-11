@@ -103,6 +103,9 @@ namespace ComputerManage.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DepartmentName")
+                        .IsUnique();
+
                     b.ToTable("Departments");
                 });
 
@@ -114,6 +117,9 @@ namespace ComputerManage.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
+                    b.Property<long?>("DepartmentId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -123,6 +129,11 @@ namespace ComputerManage.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.HasIndex("GroupName")
+                        .IsUnique();
 
                     b.ToTable("WorkingGroups");
                 });
@@ -163,7 +174,7 @@ namespace ComputerManage.Migrations
                         },
                         new
                         {
-                            Id = "2f60c7c6-a269-45a5-8a1c-56a193523d1c",
+                            Id = "1fddd7fd-37a8-40ee-9b7a-de5713192cf6",
                             ConcurrencyStamp = "2",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
@@ -270,11 +281,11 @@ namespace ComputerManage.Migrations
                         {
                             Id = "a18be9c0-aa65-4af8-bd17-00bd9344e575",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1630f0a3-51c7-462f-94fe-b241524e4ff0",
+                            ConcurrencyStamp = "31e211f7-c89f-440f-92e9-31bcba487de2",
                             EmailConfirmed = false,
                             LockoutEnabled = true,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAELxa84ttbSkIdgmcZFJVcV2aeSir/bAx2kd8gaYQq+UAET75DXSziRKXQ5yahlkJ+Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP5kpzfsiaYvBZOgpZh3AQbesGFHCEMZlsqbRqlw28TldwJJ8oVPvfPlD5UrgxW5PQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "JBOPAV6NDGLHW27AVXZY63NQK7EMP5FK",
                             TwoFactorEnabled = false,
@@ -380,7 +391,7 @@ namespace ComputerManage.Migrations
             modelBuilder.Entity("ComputerManage.Models.Computer", b =>
                 {
                     b.HasOne("ComputerManage.Models.Authentication.LoginModel", "Administrator")
-                        .WithMany("computers")
+                        .WithMany("Computers")
                         .HasForeignKey("AdministratorId");
 
                     b.HasOne("ComputerManage.Models.Department", "Department")
@@ -396,6 +407,15 @@ namespace ComputerManage.Migrations
                     b.Navigation("Department");
 
                     b.Navigation("Group");
+                });
+
+            modelBuilder.Entity("ComputerManage.Models.WorkingGroup", b =>
+                {
+                    b.HasOne("ComputerManage.Models.Department", "Department")
+                        .WithMany("WorkGroups")
+                        .HasForeignKey("DepartmentId");
+
+                    b.Navigation("Department");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -452,6 +472,8 @@ namespace ComputerManage.Migrations
             modelBuilder.Entity("ComputerManage.Models.Department", b =>
                 {
                     b.Navigation("Computers");
+
+                    b.Navigation("WorkGroups");
                 });
 
             modelBuilder.Entity("ComputerManage.Models.WorkingGroup", b =>
@@ -461,7 +483,7 @@ namespace ComputerManage.Migrations
 
             modelBuilder.Entity("ComputerManage.Models.Authentication.LoginModel", b =>
                 {
-                    b.Navigation("computers");
+                    b.Navigation("Computers");
                 });
 #pragma warning restore 612, 618
         }

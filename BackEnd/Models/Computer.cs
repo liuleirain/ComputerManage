@@ -1,6 +1,8 @@
-﻿using ComputerManage.Models.Authentication;
+﻿using AutoMapper.Configuration.Annotations;
+using ComputerManage.Models.Authentication;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ComputerManage.Models
 {
@@ -15,7 +17,7 @@ namespace ComputerManage.Models
         public string? HostName { get; set; }
         [MaxLength(256)]
         public string? IpAddress { get; set; }
-        [Required]
+        [Required(ErrorMessage = "序列号字段是必须的")]
         [MaxLength(256)]
         public string SerialNumber { get; set; }
         [MaxLength(256)]
@@ -24,8 +26,14 @@ namespace ComputerManage.Models
         public string? User { get; set; }
         public string? Remark { get; set; }
 
+        public long? DepartmentId { get; set; }
+        [JsonIgnore]
         public Department? Department { get; set; }
+        public string? AdministratorId { get; set; }
+        [JsonIgnore]
         public LoginModel? Administrator { get; set; }
+        public long? GroupId { get; set; }
+        [JsonIgnore]
         public WorkingGroup? Group { get; set; } 
     }
 }

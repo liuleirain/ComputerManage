@@ -81,6 +81,13 @@ namespace ComputerManage.Services
             return await _context.WorkingGroups.ToListAsync();
         }
 
+        public async Task<List<WorkingGroup>> GetDepartmentAllAsync(long departmentId)
+        {
+            var groups = await _context.WorkingGroups.ToListAsync();
+            if (groups == null) return null;
+            return groups.Where(group => group.DepartmentId == departmentId).ToList();
+        }
+
         public async Task<WorkingGroup> GetGroupAsync(long id)
         {
             var data = await _context.WorkingGroups.FindAsync(id);

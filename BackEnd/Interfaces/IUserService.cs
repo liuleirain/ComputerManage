@@ -1,5 +1,6 @@
 ﻿using ComputerManage.Models;
 using ComputerManage.Models.Authentication;
+using Microsoft.AspNetCore.Identity;
 
 namespace ComputerManage.Interfaces
 {

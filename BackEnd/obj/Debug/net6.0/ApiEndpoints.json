@@ -48,9 +48,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.DepartmentController",
+    "ContainingType": "ComputerManage.Controllers.ComputersController",
     "Method": "GetAll",
-    "RelativePath": "api/Department",
+    "RelativePath": "api/Computers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -58,9 +58,104 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.DepartmentController",
+    "ContainingType": "ComputerManage.Controllers.ComputersController",
     "Method": "Create",
-    "RelativePath": "api/Department",
+    "RelativePath": "api/Computers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "computer",
+        "Type": "ComputerManage.Models.Computer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerManage.Controllers.ComputersController",
+    "Method": "GetComputer",
+    "RelativePath": "api/Computers/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerManage.Controllers.ComputersController",
+    "Method": "Update",
+    "RelativePath": "api/Computers/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "computer",
+        "Type": "ComputerManage.Models.Computer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerManage.Controllers.ComputersController",
+    "Method": "Delete",
+    "RelativePath": "api/Computers/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerManage.Controllers.ComputersController",
+    "Method": "GetDepartmentAll",
+    "RelativePath": "api/Computers/department/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerManage.Controllers.DepartmentsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Departments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerManage.Controllers.DepartmentsController",
+    "Method": "Create",
+    "RelativePath": "api/Departments",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -74,9 +169,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.DepartmentController",
+    "ContainingType": "ComputerManage.Controllers.DepartmentsController",
     "Method": "GetDepartment",
-    "RelativePath": "api/Department/{id}",
+    "RelativePath": "api/Departments/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -90,9 +185,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.DepartmentController",
+    "ContainingType": "ComputerManage.Controllers.DepartmentsController",
     "Method": "Update",
-    "RelativePath": "api/Department/{id}",
+    "RelativePath": "api/Departments/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -111,9 +206,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.DepartmentController",
+    "ContainingType": "ComputerManage.Controllers.DepartmentsController",
     "Method": "Delete",
-    "RelativePath": "api/Department/{id}",
+    "RelativePath": "api/Departments/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -127,9 +222,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.WorkingGroupController",
+    "ContainingType": "ComputerManage.Controllers.WorkingGroupsController",
     "Method": "GetAll",
-    "RelativePath": "api/WorkingGroup",
+    "RelativePath": "api/WorkingGroups",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -137,9 +232,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.WorkingGroupController",
+    "ContainingType": "ComputerManage.Controllers.WorkingGroupsController",
     "Method": "Create",
-    "RelativePath": "api/WorkingGroup",
+    "RelativePath": "api/WorkingGroups",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -153,9 +248,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.WorkingGroupController",
+    "ContainingType": "ComputerManage.Controllers.WorkingGroupsController",
     "Method": "GetGroup",
-    "RelativePath": "api/WorkingGroup/{id}",
+    "RelativePath": "api/WorkingGroups/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -169,9 +264,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.WorkingGroupController",
+    "ContainingType": "ComputerManage.Controllers.WorkingGroupsController",
     "Method": "Update",
-    "RelativePath": "api/WorkingGroup/{id}",
+    "RelativePath": "api/WorkingGroups/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -190,10 +285,26 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ComputerManage.Controllers.WorkingGroupController",
+    "ContainingType": "ComputerManage.Controllers.WorkingGroupsController",
     "Method": "Delete",
-    "RelativePath": "api/WorkingGroup/{id}",
+    "RelativePath": "api/WorkingGroups/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerManage.Controllers.WorkingGroupsController",
+    "Method": "GetDepartmentAll",
+    "RelativePath": "api/WorkingGroups/department/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

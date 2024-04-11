@@ -17,6 +17,26 @@ namespace ComputerManage.Data
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<Computer>()
+                .HasOne(e => e.Department)
+                .WithMany(e => e.Computers)
+                .HasForeignKey(e => e.DepartmentId);
+
+            builder.Entity<Computer>()
+                .HasOne(e => e.Group)
+                .WithMany(e => e.Computers)
+                .HasForeignKey(e => e.GroupId);
+
+            builder.Entity<Computer>()
+                .HasOne(e => e.Administrator)
+                .WithMany(e => e.Computers)
+                .HasForeignKey(e => e.AdministratorId);
+
+            builder.Entity<WorkingGroup>()
+                .HasOne(e => e.Department)
+                .WithMany(e => e.WorkGroups)
+                .HasForeignKey(e => e.DepartmentId);
+
             this.SeedDefaultUserRole(builder);
         }
         public DbSet<Computer> Computers { get; set; }

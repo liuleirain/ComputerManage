@@ -4,10 +4,10 @@ namespace ComputerManage.Models.Authentication
 {
     public class ChangePasswordModel
     {
-        [Required(ErrorMessage = "Username is requried")]
+        [Required(ErrorMessage = "用户名是必须的")]
         [StringLength(50)]
         public string Username { get; set; }
-        [Required(ErrorMessage = "New password is requried")]
+        [Required(ErrorMessage = "密码是必须的")]
         [StringLength(50)]
         public string newPassword { get; set; }
     }
