@@ -7,8 +7,9 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import App from './App.vue'
 import router from './router'
 import axios from 'axios'
+import useStore from '@/stores'
 
-axios.defaults.baseURL = 'http://localhost:5197/'
+axios.defaults.baseURL = 'http://localhost:5000/'
 
 const app = createApp(App)
 const pinia = createPinia()

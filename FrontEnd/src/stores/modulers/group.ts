@@ -59,23 +59,45 @@ export const useGroupStore = defineStore('group', {
                 });
         },
         async updateGroup(groupId: number) {
-            await axios.put(`/api/WorkingGroups/${groupId}`, this.group)
+            await axios.put(`/api/WorkingGroups/${groupId}`, this.group,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })
                 .then(res => {
                     this.editVisible = !this.editVisible;
                     this.getGroups();
                 })
                 .catch(error => {
                     console.log(error);
+                    this.isError = true;
+                    this.message = error.response.statusText;
+                    setTimeout(() => {
+                        this.isError = false;
+                        this.message = ''
+                    }, 3000)
                 })
         },
         async deleteGroup(groupId: number) {
-            await axios.delete(`/api/WorkingGroups/${groupId}`)
+            await axios.delete(`/api/WorkingGroups/${groupId}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })
                 .then(res => {
                     this.editVisible = !this.editVisible;
                     this.getGroups();
                 })
                 .catch(error => {
                     console.log(error);
+                    this.isError = true;
+                    this.message = error.response.statusText;
+                    setTimeout(() => {
+                        this.isError = false;
+                        this.message = ''
+                    }, 3000)
                 })
         },
         async createGroup() {
@@ -83,6 +105,11 @@ export const useGroupStore = defineStore('group', {
                 groupName: this.newGroup.groupName,
                 departmentId: this.newGroup.departmentId,
                 description: this.newGroup.description
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
             })
                 .then(res => {
                     if (res.data.isSuccess === true) {
@@ -106,6 +133,12 @@ export const useGroupStore = defineStore('group', {
                 })
                 .catch(error => {
                     console.log(error);
+                    this.isError = true;
+                    this.message = error.response.statusText;
+                    setTimeout(() => {
+                        this.isError = false;
+                        this.message = ''
+                    }, 3000)
                 })
         },
         openCloseEditModal() {

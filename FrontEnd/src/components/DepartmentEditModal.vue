@@ -28,6 +28,9 @@
                             rows="3"></textarea>
                     </div>
                 </div>
+                <span v-if="department.isError" class="alert alert-danger" role="alert">
+                    {{ department.message }}
+                </span>
                 <div class="modal-footer">
                     <button @click="department.updateDepartment(group.group.id)" type="button" class="btn btn-primary">修改</button>
                         <button type="button" @click="department.deleteDepartment(department.department.id)"

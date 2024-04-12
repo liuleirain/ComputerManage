@@ -1,6 +1,6 @@
 import axios from "axios";
 import { defineStore } from "pinia";
-
+import useStore from '@/stores'
 
 export const useComputerStore = defineStore(
     'computer',
@@ -41,7 +41,6 @@ export const useComputerStore = defineStore(
         getters: {
             filterComputers: (state) => {
                 return () => {
-                    // console.log(state.computers);
                     if (state.searchData === '') {
                         return state.computers;
                     }
@@ -61,7 +60,7 @@ export const useComputerStore = defineStore(
             async getComputer(computerId: number) {
                 await axios.get(`/api/Computers/${computerId}`)
                     .then(res => {
-                            this.computer = res.data;
+                        this.computer = res.data;
                     })
                     .catch(error => {
                         console.log(error);
@@ -69,16 +68,12 @@ export const useComputerStore = defineStore(
                     });
             },
             async updateComputer(computerId: number) {
-                await axios.put(`/api/Computers/${computerId}`, this.computer)
-                    .then(res => {
-                        this.getComputers();
+                await axios.put(`/api/Computers/${computerId}`, this.computer,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem('token')}`
+                        }
                     })
-                    .catch(error => {
-                        console.log(error);
-                    });
-            },
-            async deleteComputer(computerId: number) {
-                var res = await axios.delete(`/api/Computers/${computerId}`)
                     .then(res => {
                         if (res.data.isSuccess) {
                             this.isSuccess = res.data.isSuccess;
@@ -97,11 +92,61 @@ export const useComputerStore = defineStore(
                     })
                     .catch(error => {
                         console.log(error);
-
+                        this.isError = true;
+                        this.message = error.response.statusText;
+                        setTimeout(() => {
+                            this.isError = false;
+                            this.message = ''
+                        }, 3000)
+                    });
+            },
+            async deleteComputer(computerId: number) {
+                var res = await axios.delete(`/api/Computers/${computerId}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                    .then(res => {
+                        if (res.data.isSuccess) {
+                            this.isSuccess = res.data.isSuccess;
+                            this.message = res.data.message;
+                            this.computer = {
+                                id: 0,
+                                hostName: '',
+                                ipAddress: '',
+                                serialNumber: '',
+                                quickServiceCode: '',
+                                user: '',
+                                departmentId: 0,
+                                groupId: 0,
+                                remark: ''
+                            }
+                        }
+                        else {
+                            this.isError = !res.data.isSuccess;
+                            this.message = res.data.message;
+                        }
+                        this.getComputers();
+                        setTimeout(() => {
+                            this.isSuccess = false;
+                            this.isError = false;
+                        },
+                            3000);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    this.isError = true;
+                    this.message = error.response.statusText;
+                    setTimeout(() => {
+                        this.isError = false;
+                        this.message = ''
+                    }, 3000)
                     });
             },
             async createComputer() {
                 var mythis = this;
+                const auth = useStore()
                 var res = await axios.post('/api/Computers', {
                     hostName: this.newComputer.hostName,
                     ipAddress: this.newComputer.ipAddress,
@@ -111,46 +156,54 @@ export const useComputerStore = defineStore(
                     departmentId: this.newComputer.departmentId,
                     groupId: this.newComputer.groupId,
                     remark: this.newComputer.remark
-                }).catch(function (error) {
-                    if (error.response) {
-                        if (error.response.status == 400) {
-                            mythis.errorlist = error.response.data.errors.SerialNumber;
-                        }
-                        // console.log(error.response.data);
-                        // console.log(error.response.status);
-                        // console.log(error.response.headers);
-                    } else if (error.request) {
-                        console.log(error.request);
-                    } else {
-                        console.log('Error', error.message);
-                    }
-                    // console.log(error.config);
-                });;
-                if (res == null) return;
-                if (res.data.isSuccess) {
-                    this.isSuccess = res.data.isSuccess;
-                    this.message = res.data.message;
-                    this.newComputer = {
-                        id: 0,
-                        hostName: '',
-                        ipAddress: '',
-                        serialNumber: '',
-                        quickServiceCode: '',
-                        user: '',
-                        departmentId: 0,
-                        groupId: 0,
-                        remark: ''
-                    }
-                }
-                else {
-                    this.isError = !res.data.isSuccess;
-                    this.message = res.data.message;
-                }
-                setTimeout(() => {
-                    this.isSuccess = false;
-                    this.isError = false;
                 },
-                    3000);
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                }
+                )
+                    .then(res => {
+                        if (res.data.isSuccess) {
+                            this.isSuccess = res.data.isSuccess;
+                            this.message = res.data.message;
+                            this.newComputer = {
+                                id: 0,
+                                hostName: '',
+                                ipAddress: '',
+                                serialNumber: '',
+                                quickServiceCode: '',
+                                user: '',
+                                departmentId: 0,
+                                groupId: 0,
+                                remark: ''
+                            }
+                        }
+                        else {
+                            this.isError = !res.data.isSuccess;
+                            this.message = res.data.message;
+                        }
+                        setTimeout(() => {
+                            this.isSuccess = false;
+                            this.isError = false;
+                        },
+                            3000);
+                    })
+                    .catch(function (error) {
+                        if (error.response) {
+                            if (error.response.status == 400) {
+                                mythis.errorlist = error.response.data.errors.SerialNumber;
+                            }
+                            console.log(error.response.data);
+                            console.log(error.response.status);
+                            console.log(error.response.headers);
+                        } else if (error.request) {
+                            console.log(error.request);
+                        } else {
+                            console.log('Error', error.message);
+                        }
+                        console.log(error.config);
+                    });
             },
             async sortData(source: string) {
                 if (this.orderBy !== source)

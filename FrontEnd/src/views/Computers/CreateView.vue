@@ -20,10 +20,14 @@
                                     id="quickServiceCodeTextInput" class="form-control input-sm" placeholder="输入快速服务代码">
                             </div>
                             <div class="mb-3">
-                                <label for="workingGroupSelect" class="form-label">组名<GroupCreateModal /><GroupEditModal /></label>
+                                <label for="workingGroupSelect" class="form-label">组名
+                                    <GroupCreateModal />
+                                    <GroupEditModal />
+                                </label>
                                 <select id="workingGroupSelect" v-model="computer.newComputer.groupId"
                                     class="form-select">
-                                    <option v-for="item in group.createFilterGroups()" :key="item.id" :value="item.id">{{
+                                    <option v-for="item in group.createFilterGroups()" :key="item.id" :value="item.id">
+                                        {{
                     item.groupName }}</option>
                                 </select>
                             </div>

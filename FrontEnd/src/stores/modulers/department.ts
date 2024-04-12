@@ -44,29 +44,56 @@ export const useDepartmentStore = defineStore('department', {
                 })
         },
         async updateDepartment(departmentId: number) {
-            await axios.put(`/api/Departments/${departmentId}`, this.department)
+            await axios.put(`/api/Departments/${departmentId}`, this.department,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })
                 .then(res => {
                     this.editVisible = !this.editVisible;
                     this.getDepartments();
                 })
                 .catch(error => {
                     console.log(error);
+                    this.isError = true;
+                    this.message = error.response.statusText;
+                    setTimeout(() => {
+                        this.isError = false;
+                        this.message = ''
+                    }, 3000)
                 })
         },
         async deleteDepartment(departmentId: number) {
-            await axios.delete(`/api/Departments/${departmentId}`)
+            await axios.delete(`/api/Departments/${departmentId}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })
                 .then(res => {
                     this.editVisible = !this.editVisible;
                     this.getDepartments();
                 })
                 .catch(error => {
                     console.log(error);
+                    this.isError = true;
+                    this.message = error.response.statusText;
+                    setTimeout(() => {
+                        this.isError = false;
+                        this.message = ''
+                    }, 3000)
                 })
         },
         async createDepartment() {
             await axios.post(`/api/Departments/`, {
                 departmentName: this.newDepartment.departmentName,
                 description: this.newDepartment.description
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
             })
                 .then(res => {
                     if (res.data.isSuccess === true) {
@@ -89,6 +116,12 @@ export const useDepartmentStore = defineStore('department', {
                 })
                 .catch(error => {
                     console.log(error);
+                    this.isError = true;
+                    this.message = error.response.statusText;
+                    setTimeout(() => {
+                        this.isError = false;
+                        this.message = ''
+                    }, 3000)
                 })
         },
         openCloseEditModal() {

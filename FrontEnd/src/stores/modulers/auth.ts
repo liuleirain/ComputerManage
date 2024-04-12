@@ -26,6 +26,7 @@ export const useAuthStore = defineStore(
                 })
                     .then(res => {
                         this.token = res.data.message;
+                        localStorage.setItem('token', res.data.message)
                         this.userName = '';
                         this.password = '';
                         this.isAuthenticated = true;

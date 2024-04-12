@@ -132,9 +132,6 @@ namespace ComputerManage.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.HasIndex("GroupName")
-                        .IsUnique();
-
                     b.ToTable("WorkingGroups");
                 });
 
@@ -174,7 +171,7 @@ namespace ComputerManage.Migrations
                         },
                         new
                         {
-                            Id = "1fddd7fd-37a8-40ee-9b7a-de5713192cf6",
+                            Id = "d0807fa6-07c1-4c13-b605-408525c6d6fe",
                             ConcurrencyStamp = "2",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
@@ -281,11 +278,11 @@ namespace ComputerManage.Migrations
                         {
                             Id = "a18be9c0-aa65-4af8-bd17-00bd9344e575",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "31e211f7-c89f-440f-92e9-31bcba487de2",
+                            ConcurrencyStamp = "ad34ec72-5813-4b61-abcd-4a50f8abcb9f",
                             EmailConfirmed = false,
                             LockoutEnabled = true,
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEP5kpzfsiaYvBZOgpZh3AQbesGFHCEMZlsqbRqlw28TldwJJ8oVPvfPlD5UrgxW5PQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFiSzM5jc8Uu/qAAMgOzhGAJtBo+RxEh21WM9VbXAZVdilY4dSq/pQmk7AAr6LQ2iQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "JBOPAV6NDGLHW27AVXZY63NQK7EMP5FK",
                             TwoFactorEnabled = false,

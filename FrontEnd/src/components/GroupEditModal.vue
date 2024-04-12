@@ -35,6 +35,9 @@
                             rows="3"></textarea>
                     </div>
                 </div>
+                <span v-if="group.isError" class="alert alert-danger" role="alert">
+                    {{ group.message }}
+                </span>
                 <div class="modal-footer">
                     <button @click="group.updateGroup(group.group.id)" type="button" class="btn btn-primary">修改</button>
                         <button type="button" @click="group.deleteGroup(group.group.id)"

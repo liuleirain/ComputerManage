@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 
 namespace ComputerManage.Models
 {
+    [Index(nameof(SerialNumber), IsUnique = true)]
     [Index(nameof(HostName), IsUnique = true)]
     [Index(nameof(IpAddress), IsUnique = true)]
-    [Index(nameof(SerialNumber), IsUnique = true)]
     public class Computer
     {
         [Key]

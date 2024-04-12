@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.MinimalApi;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ComputerManage.Models.Authentication
 {
@@ -14,7 +15,7 @@ namespace ComputerManage.Models.Authentication
         [NotMapped]
         [StringLength(50, MinimumLength = 5)]
         public string Password { get; set; }
-
+        [JsonIgnore]
         public ICollection<Computer> Computers { get; set; } = new List<Computer>();
     }
 }
