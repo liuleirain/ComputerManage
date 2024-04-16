@@ -8,25 +8,25 @@ export const useComputerStore = defineStore(
         state: () => ({
             computers: [] as IComputer[],
             computer: {
-                id: 0,
+                id: NaN,
                 hostName: '',
                 ipAddress: '',
                 serialNumber: '',
                 quickServiceCode: '',
                 user: '',
-                departmentId: 0,
-                groupId: 0,
+                departmentId: NaN,
+                groupId: NaN,
                 remark: ''
             } as IComputer,
             newComputer: {
-                id: 0,
+                id: NaN,
                 hostName: '',
                 ipAddress: '',
                 serialNumber: '',
                 quickServiceCode: '',
                 user: '',
-                departmentId: 0,
-                groupId: 0,
+                departmentId: NaN,
+                groupId: NaN,
                 remark: ''
             } as IComputer,
             searchData: '' as string,

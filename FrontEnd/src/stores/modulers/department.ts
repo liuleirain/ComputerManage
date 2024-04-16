@@ -5,12 +5,12 @@ export const useDepartmentStore = defineStore('department', {
     state: () => ({
         departments: [] as IDepartment[],
         department: {
-            id: 1,
+            id: NaN,
             departmentName: '',
             description: ''
         } as IDepartment,
         newDepartment: {
-            id: 1,
+            id: NaN,
             departmentName: '',
             description: ''
         } as IDepartment,

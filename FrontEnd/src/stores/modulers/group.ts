@@ -7,15 +7,15 @@ export const useGroupStore = defineStore('group', {
     state: () => ({
         groups: [] as IGroup[],
         group: {
-            id: 1,
+            id: NaN,
             groupName: '',
-            departmentId: 1,
+            departmentId: NaN,
             description: ''
         } as IGroup,
         newGroup: {
-            id: 1,
+            id: NaN,
             groupName: '',
-            departmentId: 1,
+            departmentId: NaN,
             description: ''
         } as IGroup,
         editVisible: false as boolean,
